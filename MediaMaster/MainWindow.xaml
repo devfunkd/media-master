@@ -1,0 +1,33 @@
+﻿<Window x:Class="MediaMaster.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Media Manager" 
+        Height="150" Width="250" 
+        ResizeMode="CanMinimize">
+    
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="SelectFolderButton" Content="Select Folder" HorizontalAlignment="Center" Margin="5" Padding="5" VerticalAlignment="Center" Click="SelectFolderButton_Click"/>
+        <Button Grid.Row="1" Grid.Column="1" IsEnabled="False" x:Name="StartProcessButton" Content="Start Process" HorizontalAlignment="Center" Margin="5" Padding="5" VerticalAlignment="Center" Click="StartProcessButton_Click"/>
+        <GroupBox Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="groupBox" Header="Live Stats" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto">
+            <StackPanel>
+                <Label x:Name="FilesRenamedSuccessLabel" Content="999 Files Renamed" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+                <Label x:Name="FilesNotRenamedLabel" Content="999 Files Not Changed" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+                <Label x:Name="FilesFoundLabel" Content="999 Files Found" HorizontalAlignment="Left" />
+            </StackPanel>
+        </GroupBox>
+        <ProgressBar Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="StatusProgressBar" HorizontalAlignment="Center" Height="11" Width="238" Margin="2" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>
